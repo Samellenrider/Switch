@@ -7,9 +7,11 @@
 //
 
 import XCTest
-@testable import Switch
+//@testable import Switch
 
 class SwitchTests: XCTestCase {
+    
+    
     
     override func setUp() {
         super.setUp()

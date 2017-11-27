@@ -8,18 +8,72 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+extension UIView {
+    
+    func backgroundcolour(colorOne: UIColor, colorTwo: UIColor) {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
 
+
+class ViewController: UIViewController {
+    
+    @IBOutlet var background: UIView!
+    
+    @IBOutlet weak var cheap: UISwitch!
+    
+    @IBOutlet weak var quality: UISwitch!
+    
+    @IBOutlet weak var fast: UISwitch!
+    
+    @IBAction func cheapButton(_ sender: UISwitch) {
+        if(sender.isOn == true && quality.isOn == true){
+            fast.setOn(false, animated: true)
+        } else if(sender.isOn == false){
+            quality.setOn(true, animated: true)
+            fast.setOn(true, animated: true)
+        }
+    }
+    
+    
+    @IBAction func qualitySwitch(_ sender: UISwitch) {
+        if(sender.isOn == true && fast.isOn == true){
+            cheap.setOn(false, animated: true)
+        } else if(sender.isOn == false){
+            fast.setOn(true, animated: true)
+            cheap.setOn(true, animated: true)
+        }
+    }
+    
+    @IBAction func fastSwitch(_ sender: UISwitch) {
+        if(sender.isOn == true && cheap.isOn == true) {
+            quality.setOn(false, animated: true)
+        } else if(sender.isOn == false){
+            cheap.setOn(true, animated: true)
+            quality.setOn(true, animated: true)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        background.backgroundColor(colorOne: UIColor.blue, colorTwo: UIColor.white)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
 }
+
 
