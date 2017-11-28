@@ -120,6 +120,7 @@
                         <outlet property="cheap" destination="OqH-vj-7YO" id="3sO-mo-5hv"/>
                         <outlet property="fast" destination="2pc-dQ-Y6e" id="Iud-If-k8b"/>
                         <outlet property="quality" destination="1lE-oz-6hJ" id="5P3-Yu-cab"/>
+                        <outlet property="superDuper" destination="7Q4-YC-RMA" id="ocm-xQ-0ar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

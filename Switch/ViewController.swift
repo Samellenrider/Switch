@@ -34,12 +34,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var fast: UISwitch!
     
+    @IBOutlet weak var superDuper: UISwitch!
+    
+    
     @IBAction func cheapButton(_ sender: UISwitch) {
         if(sender.isOn == true && quality.isOn == true){
             fast.setOn(false, animated: true)
         } else if(sender.isOn == false){
             quality.setOn(true, animated: true)
             fast.setOn(true, animated: true)
+            superDuper.setOn(false, animated: true)
         }
     }
     
@@ -50,6 +54,7 @@ class ViewController: UIViewController {
         } else if(sender.isOn == false){
             fast.setOn(true, animated: true)
             cheap.setOn(true, animated: true)
+            superDuper.setOn(false, animated: true)
         }
     }
     
@@ -59,6 +64,7 @@ class ViewController: UIViewController {
         } else if(sender.isOn == false){
             cheap.setOn(true, animated: true)
             quality.setOn(true, animated: true)
+            superDuper.setOn(false, animated: true)
         }
     }
     
