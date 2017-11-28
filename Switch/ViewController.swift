@@ -63,6 +63,18 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func superSwitch(_ sender: UISwitch) {
+        if(sender.isOn == true){
+            fast.setOn(true, animated: true)
+            cheap.setOn(true, animated: true)
+            quality.setOn(true, animated: true)
+        } else {
+            fast.setOn(false, animated: true)
+            cheap.setOn(false, animated: true)
+            quality.setOn(false, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
